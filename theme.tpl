@@ -123,5 +123,6 @@
         <img src="<{xoImgUrl}>images/favicon.png" alt="Design by: XOOPS UI/UX Team">
     </a>
 </div>
+<{if $xoops_isadmin|default:false}><{includeq file="$theme_name/tpl/nav-admin.tpl"}><{/if}>
 </body>
 </html>

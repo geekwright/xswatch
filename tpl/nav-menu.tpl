@@ -1,8 +1,7 @@
-<div class="navbar-wrapper">
-    <div class="navbar navbar-default navbar-static-top global-nav">
+    <div class="navbar navbar-default global-nav">
         <div class="container">
             <div class="navbar-header">
-                <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                <button data-target="#main-navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -11,7 +10,7 @@
                     <img src="<{$xoops_imageurl}>images/logo.png" alt="<{$xoops_sitename}>">
                 </a>
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse"  id="main-navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="<{$xoops_url}>"><{$smarty.const.THEME_HOME}></a></li>
                     <li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="javascript:;"><{$smarty.const.THEME_ACCOUNT}><b
@@ -52,4 +51,3 @@
             </div>
         </div>
     </div>
-</div><!-- .navbar-wrapper -->

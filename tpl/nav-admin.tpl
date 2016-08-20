@@ -1,4 +1,4 @@
-<div id="xswatch-toolbar" class="collapse in">
+<div id="xswatch-toolbar" class="collapse">
     <div class="navbar navbar-inverse navbar-fixed-bottom">
         <div class="container">
             <div class="navbar-header">
@@ -59,28 +59,28 @@
 </div>
 <script type="text/javascript">
     function xswatchToolbarIndOn() {
-        $('#xswatch-toolbar-ind').attr('class', 'glyphicon glyphicon-expand');
-        $('#xswatch-toolbar').collapse("hide");
-    }
-    function xswatchToolbarIndOff() {
         $('#xswatch-toolbar-ind').attr('class', 'glyphicon glyphicon-remove-circle');
         $('#xswatch-toolbar').collapse("show");
     }
+    function xswatchToolbarIndOff() {
+        $('#xswatch-toolbar-ind').attr('class', 'glyphicon glyphicon-expand');
+        $('#xswatch-toolbar').collapse("hide");
+    }
     function xswatchToolbarToggle() {
         var toolbar_cookie = Cookies.get('xswatch-toolbar');
-        if (toolbar_cookie == 'on') {
-            toolbar_cookie = 'off';
-        } else {
+        if (toolbar_cookie == 'off') {
             toolbar_cookie = 'on';
+        } else {
+            toolbar_cookie = 'off';
         }
-        Cookies.set('xswatch-toolbar', toolbar_cookie);
+        Cookies.set('xswatch-toolbar', toolbar_cookie, { expires: 365 });
         if (typeof $('#xswatch-toolbar').collapse == 'undefined') {
             location.reload();
         }
-        if (toolbar_cookie == 'on') {
-            xswatchToolbarIndOn();
-        } else {
+        if (toolbar_cookie == 'off') {
             xswatchToolbarIndOff();
+        } else {
+            xswatchToolbarIndOn();
         }
     }
     // set initial conditions based on cookie
@@ -88,10 +88,10 @@
     if (typeof $('#xswatch-toolbar').collapse == 'undefined') {
         location.reload();
     }
-    if (toolbar_cookie == 'on') {
-        xswatchToolbarIndOn();
-    } else {
+    if (toolbar_cookie == 'off') {
         xswatchToolbarIndOff();
+    } else {
+        xswatchToolbarIndOn();
     }
 </script>
 

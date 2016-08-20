@@ -15,17 +15,21 @@
                     <li><a href="<{$xoops_url}>"><{$smarty.const.THEME_HOME}></a></li>
                     <li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="javascript:;"><{$smarty.const.THEME_ACCOUNT}><b
                                     class="caret"></b></a>
-                        <ul class="dropdown-menu">
+                        <ul id="xswatch-account-menu" class="dropdown-menu">
                             <{if $xoops_isuser|default:false}>
                             <li><a href="<{$xoops_url}>/user.php"><{$smarty.const.THEME_ACCOUNT_EDIT}></a></li>
                             <li><a href="<{$xoops_url}>/viewpmsg.php"><{$smarty.const.THEME_ACCOUNT_MESSAGES}> <span class="badge"><{xoInboxCount}></span></a></li>
                             <li><a href="<{$xoops_url}>/user.php?op=logout"><{$smarty.const.THEME_ACCOUNT_LOGOUT}></a></li>
+                            <{if $xoops_isadmin|default:false}>
+                            <li><a href="javascript:xswatchToolbarToggle();"><{$smarty.const.THEME_ACCOUNT_TOOLBAR}> <span id="xswatch-toolbar-ind"></span></a></li>
+                            <{/if}>
                             <{else}>
                             <li><a href="<{$xoops_url}>/user.php"><{$smarty.const.THEME_ACCOUNT_LOGIN}></a></li>
                             <li><a href="<{$xoops_url}>/register.php"><{$smarty.const.THEME_ACCOUNT_REGISTER}></a></li>
                             <{/if}>
                         </ul>
                     </li>
+                    <!-- begin custom menus - customize these for your system -->
                     <li><a href="javascript:;"><{$smarty.const.THEME_MODULE1}></a></li>
                     <li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="javascript:;"><{$smarty.const.THEME_MODULE2}><b
                                     class="caret"></b></a>
@@ -39,6 +43,7 @@
                     </li>
                     <li><a href="<{$xoops_url}>/modules/newbb"><{$smarty.const.THEME_MODULE3}></a></li>
                     <li><a href="<{$xoops_url}>/modules/contact"><{$smarty.const.THEME_MODULE4}></a></li>
+                    <!-- end custom menus -->
                 </ul>
                 <form class="navbar-form navbar-right" role="search" action="<{xoAppUrl search.php}>" method="get">
                     <div class="input-group">

@@ -19,6 +19,7 @@ define('THEME_ACCOUNT_LOGIN', 'Login');
 define('THEME_ACCOUNT_LOGOUT', 'Logout');
 define('THEME_ACCOUNT_MESSAGES', "Messages");
 define('THEME_ACCOUNT_REGISTER', "Sign Up");
+define('THEME_ACCOUNT_TOOLBAR', "Toolbar");
 
 //Slider
 define('THEME_READMORE', 'Read More');
@@ -53,5 +54,34 @@ define('THEME_COOKIE_DISMISS', 'Got it!');
 define('THEME_COOKIE_LEARNMORE', 'More info');
 
 define('THEME_SELECT_ALL', 'Select All');
+
+// Toolbar
+define('THEME_TOOLBAR_HOME', 'Home');
+define('THEME_TOOLBAR_SETTINGS', 'Settings');
+define('THEME_TOOLBAR_CONTROL_PANEL', 'Control Panel');
+define('THEME_TOOLBAR_SYSTEM_CONFIG', 'System Configuration');
+define('THEME_TOOLBAR_PREFERENCES', 'Preferences');
+define('THEME_TOOLBAR_SYSTEM_MODULE', 'System Module');
+define('THEME_TOOLBAR_GENERAL_SETTINGS', 'General Settings');
+define('THEME_TOOLBAR_TOOLS', 'Tools');
+define('THEME_TOOLBAR_SYSTEM_OPTIONS', 'System Options');
+define('THEME_TOOLBAR_MODULES', 'Modules');
+define('THEME_TOOLBAR_BLOCKS', 'Blocks');
+define('THEME_TOOLBAR_TEMPLATES', 'Templates');
+define('THEME_TOOLBAR_MAINTENANCE', 'Maintenance');
+define('THEME_TOOLBAR_USER_TOOLS', 'User');
+define('THEME_TOOLBAR_USERS', 'Users');
+define('THEME_TOOLBAR_GROUPS', 'Groups');
+define('THEME_TOOLBAR_RANKS', 'Ranks');
+define('THEME_TOOLBAR_FIND', 'Find');
+define('THEME_TOOLBAR_MAIL', 'Mail');
+define('THEME_TOOLBAR_COMMENTS', 'Comments');
+define('THEME_TOOLBAR_IMAGE_TOOLS', 'Image');
+define('THEME_TOOLBAR_IMAGES', 'Images');
+define('THEME_TOOLBAR_AVATARS', 'Avatars');
+define('THEME_TOOLBAR_SMILIES', 'Smilies');
+define('THEME_TOOLBAR_BANNERS', 'Banners');
+define('THEME_TOOLBAR_CLOSE', 'Close');
+
 
 

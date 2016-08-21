@@ -51,7 +51,7 @@
                             <li><a href="<{xoAppUrl modules/system/admin.php?fct=banners}>"><span class="glyphicon glyphicon-link"></span> <{$smarty.const.THEME_TOOLBAR_BANNERS}></a></li>
                         </ul>
                     </li>
-                    <li><a href="javascript:xswatchToolbarToggle();"><span class="glyphicon glyphicon-remove-circle"></span> <{$smarty.const.THEME_TOOLBAR_CLOSE}></a></li>
+                    <li><a href="javascript:xswatchToolbarToggle();"><span class="glyphicon glyphicon-remove"></span> <{$smarty.const.THEME_TOOLBAR_CLOSE}></a></li>
                 </ul>
             </div>
         </div>
@@ -59,7 +59,7 @@
 </div>
 <script type="text/javascript">
     function xswatchToolbarIndOn() {
-        $('#xswatch-toolbar-ind').attr('class', 'glyphicon glyphicon-remove-circle');
+        $('#xswatch-toolbar-ind').attr('class', 'glyphicon glyphicon-remove');
         $('#xswatch-toolbar').collapse("show");
     }
     function xswatchToolbarIndOff() {

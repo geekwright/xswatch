@@ -45,6 +45,7 @@
                     <li><a href="<{$xoops_url}>/modules/contact"><{$smarty.const.THEME_MODULE4}></a></li>
                     <!-- end custom menus -->
                 </ul>
+                <{if $xoops_search|default:false}>
                 <form class="navbar-form navbar-right" role="search" action="<{xoAppUrl search.php}>" method="get">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="<{$smarty.const.THEME_SEARCH_TEXT}>" name="query">
@@ -53,6 +54,7 @@
                     </div>
                     <input type="hidden" name="action" value="results">
                 </form>
+                <{/if}>
             </div>
         </div>
     </div>

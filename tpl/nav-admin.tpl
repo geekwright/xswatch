@@ -60,38 +60,28 @@
 <script type="text/javascript">
     function xswatchToolbarIndOn() {
         $('#xswatch-toolbar-ind').attr('class', 'glyphicon glyphicon-remove');
-        $('#xswatch-toolbar').collapse("show");
+        $('#xswatch-toolbar').show();
     }
     function xswatchToolbarIndOff() {
         $('#xswatch-toolbar-ind').attr('class', 'glyphicon glyphicon-expand');
-        $('#xswatch-toolbar').collapse("hide");
+        $('#xswatch-toolbar').hide();
     }
     function xswatchToolbarToggle() {
         var toolbar_cookie = Cookies.get('xswatch-toolbar');
         if (toolbar_cookie == 'off') {
             toolbar_cookie = 'on';
+            xswatchToolbarIndOn();
         } else {
             toolbar_cookie = 'off';
+            xswatchToolbarIndOff();
         }
         Cookies.set('xswatch-toolbar', toolbar_cookie, { expires: 365 });
-        if (typeof $('#xswatch-toolbar').collapse == 'undefined') {
-            location.reload();
-        }
-        if (toolbar_cookie == 'off') {
-            xswatchToolbarIndOff();
-        } else {
-            xswatchToolbarIndOn();
-        }
     }
     // set initial conditions based on cookie
     var toolbar_cookie = Cookies.get('xswatch-toolbar');
-    if (typeof $('#xswatch-toolbar').collapse == 'undefined') {
-        location.reload();
-    }
     if (toolbar_cookie == 'off') {
         xswatchToolbarIndOff();
     } else {
         xswatchToolbarIndOn();
     }
 </script>
-

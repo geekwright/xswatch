@@ -14,6 +14,7 @@
             <div class="navbar-collapse collapse" id="admin-navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="<{xoAppUrl /}>"><span class="glyphicon glyphicon-home"></span> <{$smarty.const.THEME_TOOLBAR_HOME}></a></li>
+                    <li><a href="javascript:xswatchEnableBlockEdits();"><span class="glyphicon glyphicon-edit"></span> <{$smarty.const.THEME_TOOLBAR_SHOW_BLOCK_EDIT}></a></li>
                     <li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="javascript:;"><{$smarty.const.THEME_TOOLBAR_SETTINGS}><b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="<{xoAppUrl admin.php}>"><span class="glyphicon glyphicon-dashboard"></span> <{$smarty.const.THEME_TOOLBAR_CONTROL_PANEL}></a></li>
@@ -58,6 +59,17 @@
     </div>
 </div>
 <script type="text/javascript">
+    var toolbar_block_edits = false;
+
+    function xswatchEnableBlockEdits() {
+        if (toolbar_block_edits) {
+            $('.toolbar-block-edit').hide();
+            toolbar_block_edits = false;
+        } else {
+            $('.toolbar-block-edit').show();
+            toolbar_block_edits = true;
+        }
+    }
     function xswatchToolbarIndOn() {
         $('#xswatch-toolbar-ind').attr('class', 'glyphicon glyphicon-remove');
         $('#xswatch-toolbar').show();

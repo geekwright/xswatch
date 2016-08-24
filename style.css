@@ -199,6 +199,13 @@ a.navbar-brand.xlogo {
     top: 0;
 }
 
+.toolbar-block-edit {
+    position: absolute;
+    z-index: +30;
+    opacity: 0.8;
+    box-shadow: 2px 2px 2px #222222;
+    display: none;
+}
 /* 4. XOOPS Modules */
 
 /* 4.1. News */

@@ -83,5 +83,8 @@ define('THEME_TOOLBAR_SMILIES', 'Smilies');
 define('THEME_TOOLBAR_BANNERS', 'Banners');
 define('THEME_TOOLBAR_CLOSE', 'Close');
 
+define('THEME_TOOLBAR_SHOW_BLOCK_EDIT', 'Block Edits');
+define('THEME_TOOLBAR_EDIT_THIS_BLOCK', 'Edit this block');
+
 
 

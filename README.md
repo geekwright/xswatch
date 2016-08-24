@@ -10,7 +10,7 @@ Features:
 - emphasis on better mobile experience
 - self hosted, with no off domain resources required
 - built in EU cookie compliance
-- administrator toolbar
+- administrator toolbar with block edit feature
 
 Customize xSwatch:
 - customize the Navigation Bar in tpl/nav-menu.tpl and language/*/main.php to match your system

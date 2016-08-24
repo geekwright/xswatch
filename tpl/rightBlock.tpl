@@ -3,7 +3,7 @@
         <{foreach item=block from=$xoBlocks.canvas_right}>
             <aside>
                 <{if $block.title}><h4 class="block-title"><{$block.title}></h4><{/if}>
-                <{$block.content}>
+                <{includeq file="$theme_name/tpl/blockContent.tpl"}>
             </aside>
         <{/foreach}>
     </div>

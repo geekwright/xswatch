@@ -2,7 +2,7 @@
     <{foreach item=block from=$xoBlocks.footer_center}>
         <div class="xoops-footer-blocks">
             <{if $block.title}><h4><{$block.title}></h4><{/if}>
-            <{$block.content}>
+            <{includeq file="$theme_name/tpl/blockContent.tpl"}>
         </div>
     <{/foreach}>
 </aside>

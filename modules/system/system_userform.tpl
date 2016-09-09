@@ -1,4 +1,5 @@
-<div class="row">
+<div class="container-fluid">
+    <div class="row">
     <legend class="bold"><{$lang_login}></legend>
 
     <form action="user.php" method="post">
@@ -30,10 +31,10 @@
     <a name="lost"></a>
 
     <div><{$lang_notregister}><br></div>
-</div>
+    </div>
 
-<br>
-<div class="row">
+    <br>
+    <div class="row">
     <legend class="bold"><{$lang_lostpassword}></legend>
     <p><{$lang_noproblem}></p>
     <form action="lostpass.php" method="post">
@@ -46,4 +47,5 @@
         <input type="hidden" name="t"  value="<{$mailpasswd_token}>"/>
         <button type="submit" class="btn btn-default"><{$lang_sendpassword}></button>
     </form>
+    </div>
 </div>

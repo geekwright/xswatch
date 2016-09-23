@@ -1,6 +1,6 @@
 <div class="newbb">
     <ul class="breadcrumb">
-        <li><a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/index.php"><{$smarty.const._MD_NEWBB_FORUMHOME}></a></li>
+        <li><a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/index.php"><{$smarty.const._MD_FORUMHOME}></a></li>
         <{if $parent_forum}>
         <li><a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/viewforum.php?forum=<{$parent_forum}>"><{$parent_name}></a></li>
         <li><a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/viewforum.php?forum=<{$forum_id}>"><{$forum_name}></a></li>
@@ -28,30 +28,30 @@
                     <option value="0"><{$smarty.const._SELECT}></option>
                     <option value="delete"><{$smarty.const._DELETE}></option>
                     <{if $status eq "pending"}>
-                        <option value="approve"><{$smarty.const._MD_NEWBB_APPROVE}></option>
-                        <option value="move"><{$smarty.const._MD_NEWBB_MOVE}></option>
+                        <option value="approve"><{$smarty.const._MD_APPROVE}></option>
+                        <option value="move"><{$smarty.const._MD_MOVE}></option>
                     <{elseif $status eq "deleted"}>
-                        <option value="restore"><{$smarty.const._MD_NEWBB_RESTORE}></option>
+                        <option value="restore"><{$smarty.const._MD_RESTORE}></option>
                     <{else}>
-                        <option value="move"><{$smarty.const._MD_NEWBB_MOVE}></option>
+                        <option value="move"><{$smarty.const._MD_MOVE}></option>
                     <{/if}>
                 </select>
                 <input type="hidden" name="forum_id" value="<{$forum_id}>"/>
                 <input type="submit" name="submit" value="<{$smarty.const._SUBMIT}>"/>
                 |
-                <a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/list.topic.php" target="_self" title="<{$smarty.const._MD_NEWBB_TYPE_VIEW}>"><{$smarty.const._MD_NEWBB_TYPE_VIEW}></a>
+                <a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/list.topic.php" target="_self" title="<{$smarty.const._MD_TYPE_VIEW}>"><{$smarty.const._MD_TYPE_VIEW}></a>
                 <!-- irmtfan remove < { elseif $mode eq 1} > to show all admin links in admin mode in the initial page loading -->
             <{else}>
-                <a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/list.topic.php?status=active#admin" target="_self" title="<{$smarty.const._MD_NEWBB_TYPE_ADMIN}>"><{$smarty.const._MD_NEWBB_TYPE_ADMIN}></a>
+                <a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/list.topic.php?status=active#admin" target="_self" title="<{$smarty.const._MD_TYPE_ADMIN}>"><{$smarty.const._MD_TYPE_ADMIN}></a>
                 |
-                <a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/list.topic.php?status=pending#admin" target="_self" title="<{$smarty.const._MD_NEWBB_TYPE_PENDING}>"><{$smarty.const._MD_NEWBB_TYPE_PENDING}></a>
+                <a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/list.topic.php?status=pending#admin" target="_self" title="<{$smarty.const._MD_TYPE_PENDING}>"><{$smarty.const._MD_TYPE_PENDING}></a>
                 |
-                <a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/list.topic.php?status=deleted#admin" target="_self" title="<{$smarty.const._MD_NEWBB_TYPE_DELETED}>"><{$smarty.const._MD_NEWBB_TYPE_DELETED}></a>
+                <a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/list.topic.php?status=deleted#admin" target="_self" title="<{$smarty.const._MD_TYPE_DELETED}>"><{$smarty.const._MD_TYPE_DELETED}></a>
                 |
-                <a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/moderate.php" target="_self" title="<{$smarty.const._MD_NEWBB_TYPE_SUSPEND}>"><{$smarty.const._MD_NEWBB_TYPE_SUSPEND}></a>
+                <a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/moderate.php" target="_self" title="<{$smarty.const._MD_TYPE_SUSPEND}>"><{$smarty.const._MD_TYPE_SUSPEND}></a>
                 <!-- irmtfan remove < { else } > no need for mode=1
 < { else } >
-<!--<a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/list.topic.php?mode=1#admin" target="_self" title="<{$smarty.const._MD_NEWBB_TYPE_VIEW}>"><{$smarty.const._MD_NEWBB_TYPE_VIEW}></a>
+<!--<a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/list.topic.php?mode=1#admin" target="_self" title="<{$smarty.const._MD_TYPE_VIEW}>"><{$smarty.const._MD_TYPE_VIEW}></a>
 -->
             <{/if}>
         </div>
@@ -64,12 +64,12 @@
     <div>
         <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" id="topicoption" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                <{$smarty.const._MD_NEWBB_TOPICOPTION}>
+                <{$smarty.const._MD_TOPICOPTION}>
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="topicoption">
-                <li><a href="<{$post_link}>"><{$smarty.const._MD_NEWBB_VIEW}>&nbsp;<{$smarty.const._MD_NEWBB_ALLPOSTS}></a></li>
-                <li><a href="<{$newpost_link}>"><{$smarty.const._MD_NEWBB_VIEW}>&nbsp;<{$smarty.const._MD_NEWBB_NEWPOSTS}></a></li>
+                <li><a href="<{$post_link}>"><{$smarty.const._MD_VIEW}>&nbsp;<{$smarty.const._MD_ALLPOSTS}></a></li>
+                <li><a href="<{$newpost_link}>"><{$smarty.const._MD_VIEW}>&nbsp;<{$smarty.const._MD_NEWPOSTS}></a></li>
                 <li role="separator" class="divider"></li>
                 <{foreach item=filter from=$filters}>
                 <li><a href="<{$filter.link}>"><{$filter.title}></li>
@@ -148,7 +148,7 @@
             <td align="center" valign="middle"><{$topic.topic_views}></td>
             <!-- irmtfan hardcode removed align="right" -->
             <td class="align_right" valign="middle"><{$topic.topic_last_posttime}><br>
-                <{$smarty.const._MD_NEWBB_BY}> <{$topic.topic_last_poster}>&nbsp;&nbsp;<{$topic.topic_page_jump_icon}>
+                <{$smarty.const._MD_BY}> <{$topic.topic_last_poster}>&nbsp;&nbsp;<{$topic.topic_page_jump_icon}>
             </td>
         </tr>
         <{/foreach}>
@@ -169,7 +169,7 @@
         <{strip}>
         <form class="xoopsform" method="get" action="<{$xoops_url}>/modules/<{$xoops_dirname}>/list.topic.php">
             <ul class="list-inline">
-                <li><strong><{$smarty.const._MD_NEWBB_SORTEDBY}>:</strong></li>
+                <li><strong><{$smarty.const._MD_SORTEDBY}>:</strong></li>
                 <li><{$selection.sort}></li>
                 <li><{$selection.order}></li>
                 <li><{$selection.since}></li>
@@ -192,12 +192,12 @@
             <input type="hidden" name="searchin" id="searchin" value="both">
 
             <span class="input-group-btn">
-                <button class="btn btn-primary" type="submit" id="submit"><{$smarty.const._MD_NEWBB_SEARCH}></button>
+                <button class="btn btn-primary" type="submit" id="submit"><{$smarty.const._MD_SEARCH}></button>
             </span>
         </form>
     </div>
     <div class="col-sm-3 col-md-3">
-        <a class="btn btn-primary btn-block" href="<{$xoops_url}>/modules/<{$xoops_dirname}>/search.php"><{$smarty.const._MD_NEWBB_ADVSEARCH}></a>
+        <a class="btn btn-primary btn-block" href="<{$xoops_url}>/modules/<{$xoops_dirname}>/search.php"><{$smarty.const._MD_ADVSEARCH}></a>
     </div>
     <div class="col-sm-4 col-md-4 text-right xoopsform"><{$forum_jumpbox}></div>
     <!--<{$forum_addpoll}>-->
@@ -205,12 +205,12 @@
 
 <div>
     <div class="left floatleft">
-        <{$img_newposts}> = <{$smarty.const._MD_NEWBB_NEWPOSTS}> (<{$img_hotnewposts}> = <{$smarty.const._MD_NEWBB_MORETHAN}>) <br>
-        <{$img_folder}> = <{$smarty.const._MD_NEWBB_NONEWPOSTS}> (<{$img_hotfolder}> = <{$smarty.const._MD_NEWBB_MORETHAN2}>) <br>
-        <{$img_locked}> = <{$smarty.const._MD_NEWBB_TOPICLOCKED}> <br>
-        <{$img_sticky}> = <{$smarty.const._MD_NEWBB_TOPICSTICKY}> <br>
-        <{$img_digest}> = <{$smarty.const._MD_NEWBB_TOPICDIGEST}> <br>
-        <{$img_poll}> = <{$smarty.const._MD_NEWBB_TOPICHASPOLL}>
+        <{$img_newposts}> = <{$smarty.const._MD_NEWPOSTS}> (<{$img_hotnewposts}> = <{$smarty.const._MD_MORETHAN}>) <br>
+        <{$img_folder}> = <{$smarty.const._MD_NONEWPOSTS}> (<{$img_hotfolder}> = <{$smarty.const._MD_MORETHAN2}>) <br>
+        <{$img_locked}> = <{$smarty.const._MD_TOPICLOCKED}> <br>
+        <{$img_sticky}> = <{$smarty.const._MD_TOPICSTICKY}> <br>
+        <{$img_digest}> = <{$smarty.const._MD_TOPICDIGEST}> <br>
+        <{$img_poll}> = <{$smarty.const._MD_TOPICHASPOLL}>
     </div>
     <!-- irmtfan hardcode removed style="float: right; text-align: right;" -->
 </div>

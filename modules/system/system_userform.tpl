@@ -48,4 +48,5 @@
         <button type="submit" class="btn btn-default"><{$lang_sendpassword}></button>
     </form>
     </div>
+    </div>
 </div>

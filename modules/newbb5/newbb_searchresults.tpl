@@ -3,10 +3,10 @@
     <caption><{$search_info}></caption>
     <thead>
     <tr>
-        <th><{$smarty.const._MD_FORUMC}></th>
-        <th><{$smarty.const._MD_SUBJECT}></th>
-        <th><{$smarty.const._MD_AUTHOR}></th>
-        <th><{$smarty.const._MD_POSTTIME}></th>
+        <th><{$smarty.const._MD_NEWBB_FORUMC}></th>
+        <th><{$smarty.const._MD_NEWBB_SUBJECT}></th>
+        <th><{$smarty.const._MD_NEWBB_AUTHOR}></th>
+        <th><{$smarty.const._MD_NEWBB_POSTTIME}></th>
     </tr>
     </thead>
     <tbody>

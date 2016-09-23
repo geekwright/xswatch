@@ -16,12 +16,15 @@
 
 <{if $mode gt 1}>
 <form name="form_topics_admin" action="<{$xoops_url}>/modules/<{$xoops_dirname}>/action.topic.php" method="POST" onsubmit="if(window.document.form_topics_admin.op.value &lt; 1){return false;}">
-<{/if}>
+    <{/if}>
 
     <{if $viewer_level gt 1}>
+        <!-- irmtfan hardcode removed style="padding: 5px;float: right; text-align:right;" -->
         <div class="pagenav" id="admin">
             <{if $mode gt 1}>
-                <select name="op" class="btn btn-default">
+                <{$smarty.const._ALL}>:
+                <input type="checkbox" name="topic_check1" id="topic_check1" value="1" onclick="xoopsCheckAll('form_topics_admin', 'topic_check1');"/>
+                <select name="op">
                     <option value="0"><{$smarty.const._SELECT}></option>
                     <option value="delete"><{$smarty.const._DELETE}></option>
                     <{if $status eq "pending"}>
@@ -34,13 +37,22 @@
                     <{/if}>
                 </select>
                 <input type="hidden" name="forum_id" value="<{$forum_id}>"/>
-                <input class="btn btn-default" type="submit" name="submit" value="<{$smarty.const._SUBMIT}>"/>
-                <a class="btn btn-default" href="<{$xoops_url}>/modules/<{$xoops_dirname}>/list.topic.php" target="_self" title="<{$smarty.const._MD_NEWBB_TYPE_VIEW}>"><{$smarty.const._MD_NEWBB_TYPE_VIEW}></a>
+                <input type="submit" name="submit" value="<{$smarty.const._SUBMIT}>"/>
+                |
+                <a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/list.topic.php" target="_self" title="<{$smarty.const._MD_NEWBB_TYPE_VIEW}>"><{$smarty.const._MD_NEWBB_TYPE_VIEW}></a>
+                <!-- irmtfan remove < { elseif $mode eq 1} > to show all admin links in admin mode in the initial page loading -->
             <{else}>
-                <a class="btn btn-default" href="<{$xoops_url}>/modules/<{$xoops_dirname}>/list.topic.php?status=active#admin" target="_self" title="<{$smarty.const._MD_NEWBB_TYPE_ADMIN}>"><{$smarty.const._MD_NEWBB_TYPE_ADMIN}></a>
-                <a class="btn btn-default" href="<{$xoops_url}>/modules/<{$xoops_dirname}>/list.topic.php?status=pending#admin" target="_self" title="<{$smarty.const._MD_NEWBB_TYPE_PENDING}>"><{$smarty.const._MD_NEWBB_TYPE_PENDING}></a>
-                <a class="btn btn-default" href="<{$xoops_url}>/modules/<{$xoops_dirname}>/list.topic.php?status=deleted#admin" target="_self" title="<{$smarty.const._MD_NEWBB_TYPE_DELETED}>"><{$smarty.const._MD_NEWBB_TYPE_DELETED}></a>
-                <a class="btn btn-default" href="<{$xoops_url}>/modules/<{$xoops_dirname}>/moderate.php" target="_self" title="<{$smarty.const._MD_NEWBB_TYPE_SUSPEND}>"><{$smarty.const._MD_NEWBB_TYPE_SUSPEND}></a>
+                <a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/list.topic.php?status=active#admin" target="_self" title="<{$smarty.const._MD_NEWBB_TYPE_ADMIN}>"><{$smarty.const._MD_NEWBB_TYPE_ADMIN}></a>
+                |
+                <a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/list.topic.php?status=pending#admin" target="_self" title="<{$smarty.const._MD_NEWBB_TYPE_PENDING}>"><{$smarty.const._MD_NEWBB_TYPE_PENDING}></a>
+                |
+                <a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/list.topic.php?status=deleted#admin" target="_self" title="<{$smarty.const._MD_NEWBB_TYPE_DELETED}>"><{$smarty.const._MD_NEWBB_TYPE_DELETED}></a>
+                |
+                <a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/moderate.php" target="_self" title="<{$smarty.const._MD_NEWBB_TYPE_SUSPEND}>"><{$smarty.const._MD_NEWBB_TYPE_SUSPEND}></a>
+                <!-- irmtfan remove < { else } > no need for mode=1
+< { else } >
+<!--<a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/list.topic.php?mode=1#admin" target="_self" title="<{$smarty.const._MD_NEWBB_TYPE_VIEW}>"><{$smarty.const._MD_NEWBB_TYPE_VIEW}></a>
+-->
             <{/if}>
         </div>
         <br>
@@ -76,8 +88,9 @@
     <div class="clear"></div>
     <br>
     <br>
-
-    <table class="outer" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+    <div class="table-responsive">
+    <table class="table table-hover">
+        <!-- irmtfan hardcode removed align="left" -->
         <tr class="head" class="align_left">
             <td width="5%" colspan="2">
                 <{if $mode gt 1}>
@@ -98,16 +111,25 @@
         <!-- start forum topic -->
         <{foreachq name=loop item=topic from=$topics}>
         <tr class="<{cycle values="even,odd"}>">
+            <!-- irmtfan add topic-read/topic-new smarty variable  -->
             <td width="4%" align="center" class="<{if $topic.topic_read eq 1 }>topic-read<{else}>topic-new<{/if}>">
                 <{if $mode gt 1}>
                     <input type="checkbox" name="topic_id[]" id="topic_id[<{$topic.topic_id}>]" value="<{$topic.topic_id}>"/>
                 <{else}>
+                    <!-- irmtfan add lock -->
                     <{$topic.topic_folder}><{$topic.lock}>
                 <{/if}>
             </td>
+            <!-- irmtfan add sticky, digest, poll -->
             <td width="4%" align="center"><{$topic.topic_icon}><{$topic.sticky}><br><{$topic.digest}><{$topic.poll}></td>
+            <!-- irmtfan remove topic_link hardcode and add topic_excerpt -->
             <td>&nbsp;<a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/<{$topic.topic_link}>" title="<{$topic.topic_excerpt}>">
+                    <!-- irmtfan remove
+        <{if $topic.allow_prefix AND $topic.topic_subject}>
+        <{$topic.topic_subject}>
+        <{/if}> -->
                     <{$topic.topic_title}></a><{$topic.attachment}> <{$topic.topic_page_jump}>
+                <!-- irmtfan add topic publish time and rating -->
                 <br>
         <span>
             <{$headers.publish.title}>: <{$topic.topic_time}>
@@ -119,10 +141,12 @@
             </span>
                 <{/if}>
             </td>
+            <!-- irmtfan hardcode removed align="left" -->
             <td class="align_left" valign="middle"><{$topic.topic_forum_link}></td>
             <td align="center" valign="middle"><{$topic.topic_replies}></td>
             <td align="center" valign="middle"><{$topic.topic_poster}></td>
             <td align="center" valign="middle"><{$topic.topic_views}></td>
+            <!-- irmtfan hardcode removed align="right" -->
             <td class="align_right" valign="middle"><{$topic.topic_last_posttime}><br>
                 <{$smarty.const._MD_NEWBB_BY}> <{$topic.topic_last_poster}>&nbsp;&nbsp;<{$topic.topic_page_jump_icon}>
             </td>
@@ -134,32 +158,50 @@
 </form>
 <{/if}>
 
-<tr class="foot">
-    <td colspan="8" align="center">
-        <{strip}>
-            <form method="get" action="<{$selection.action}>">
-                <strong><{$smarty.const._MD_NEWBB_SORTEDBY}></strong>&nbsp;
-                <{$selection.sort}>&nbsp;
-                <{$selection.order}>&nbsp;
-                <{$selection.since}>&nbsp;
-                <{foreach item=hidval key=hidvar from=$selection.vars}>
-                    <{if $hidval && $hidvar neq "sort" && $hidvar neq "order" && $hidvar neq "since"}>
-                        <input type="hidden" name="<{$hidvar}>" value="<{$hidval}>"/>
-                    <{/if}>
-                <{/foreach}>
-                <input type="submit" value="<{$smarty.const._SUBMIT}>"/>
-            </form>
-        <{/strip}>
-    </td>
-</tr>
 </table>
+</div>
 <!-- end forum main table -->
 
-<{if $pagenav}>
-    <div class="pagenav"><{$pagenav|replace:'form':'div'|replace:'id="xo-pagenav"':''}> <!-- irmtfan to solve nested forms and id="xo-pagenav" issue --></div>
-    <br>
-<{/if}>
-<div class="clear"></div>
+<div class="text-right generic-pagination"><{$forum_pagenav|replace:'form':'div'|replace:'id="xo-pagenav"':''}></div>
+
+<div class="row mb10">
+    <div class="col-md-12">
+        <{strip}>
+        <form class="xoopsform" method="get" action="<{$xoops_url}>/modules/<{$xoops_dirname}>/list.topic.php">
+            <ul class="list-inline">
+                <li><strong><{$smarty.const._MD_NEWBB_SORTEDBY}>:</strong></li>
+                <li><{$selection.sort}></li>
+                <li><{$selection.order}></li>
+                <li><{$selection.since}></li>
+                <li><input type="submit" value="<{$smarty.const._SUBMIT}>" class="btn btn-primary"></li>
+            </ul>
+            <{foreach item=hidval key=hidvar from=$selection.vars}>
+            <{if $hidval && $hidvar neq "sort" && $hidvar neq "order" && $hidvar neq "since"}>
+            <input type="hidden" name="<{$hidvar}>" value="<{$hidval}>"/>
+            <{/if}>
+            <{/foreach}>
+        </form>
+        <{/strip}>
+    </div>
+    <div class="col-sm-5 col-md-5">
+        <form class="input-group" action="<{$xoops_url}>/modules/<{$xoops_dirname}>/search.php" method="post" name="search" id="search"
+              role="search">
+            <input name="term" id="term" type="text" class="form-control" placeholder="<{$smarty.const.THEME_NEWBB_SEARCH_FORUM}>">
+            <input type="hidden" name="forum" id="forum" value="all">
+            <input type="hidden" name="sortby" id="sortby" value="p.post_time desc">
+            <input type="hidden" name="searchin" id="searchin" value="both">
+
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="submit" id="submit"><{$smarty.const._MD_NEWBB_SEARCH}></button>
+            </span>
+        </form>
+    </div>
+    <div class="col-sm-3 col-md-3">
+        <a class="btn btn-primary btn-block" href="<{$xoops_url}>/modules/<{$xoops_dirname}>/search.php"><{$smarty.const._MD_NEWBB_ADVSEARCH}></a>
+    </div>
+    <div class="col-sm-4 col-md-4 text-right xoopsform"><{$forum_jumpbox}></div>
+    <!--<{$forum_addpoll}>-->
+</div>
 
 <div>
     <div class="left floatleft">
@@ -170,32 +212,7 @@
         <{$img_digest}> = <{$smarty.const._MD_NEWBB_TOPICDIGEST}> <br>
         <{$img_poll}> = <{$smarty.const._MD_NEWBB_TOPICHASPOLL}>
     </div>
-    <div class="icon_right">
-        <form action="<{$xoops_url}>/modules/<{$xoops_dirname}>/search.php" method="get">
-            <input name="term" id="term" type="text" size="15"/>
-            <{foreach item=hidval key=hidvar from=$search}>
-                <{if $hidval }>
-                    <input type="hidden" name="<{$hidvar}>" value="<{$hidval}>"/>
-                <{/if}>
-            <{/foreach}>
-            <input type="submit" class="formButton" value="<{$smarty.const._MD_NEWBB_SEARCH}>"/><br>
-            [<a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/search.php"><{$smarty.const._MD_NEWBB_ADVSEARCH}></a>]
-        </form>
-        <br>
-        <{if $forum_jumpbox }>
-            <form method="get" action="<{$selection.action}>">
-                <{$selection.forum}>&nbsp;
-                <{foreach item=hidval key=hidvar from=$selection.vars}>
-                    <{if $hidval && $hidvar neq "forum"}>
-                        <input type="hidden" name="<{$hidvar}>" value="<{$hidval}>"/>
-                    <{/if}>
-                <{/foreach}>
-                <input type="submit" value="<{$smarty.const._SUBMIT}>"/>
-            </form>
-            <br>
-            <{$forum_jumpbox}>
-        <{/if}>
-    </div>
+    <!-- irmtfan hardcode removed style="float: right; text-align: right;" -->
 </div>
 <div class="clear"></div>
 <br>

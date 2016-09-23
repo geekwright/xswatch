@@ -18,7 +18,7 @@
         <{$andor_selection_box}>
     </div>
     <div class="form-group">
-        <label for="forum"><{$smarty.const._MD_FORUMC}></label>
+        <label for="forum"><{$smarty.const._MD_NEWBB_FORUMC}></label>
         <{$forum_selection_box}>
     </div>
     <div class="form-group">
@@ -26,23 +26,23 @@
         <{$searchin_radio}>
     </div>
     <div class="form-group">
-        <label for="uname"><{$smarty.const._MD_AUTHOR}></label>
+        <label for="uname"><{$smarty.const._MD_NEWBB_AUTHOR}></label>
         <input class="form-control" type="text" name="uname" id="uname" value="<{$author_select}>"/>
     </div>
     <div class="form-group">
-        <label for="sortby"><{$smarty.const._MD_SORTBY}></label>
+        <label for="sortby"><{$smarty.const._MD_NEWBB_SORTBY}></label>
         <{$sortby_selection_box}>
     </div>
     <div class="form-group">
-        <label for="since"><{$smarty.const._MD_SINCE}></label>
+        <label for="since"><{$smarty.const._MD_NEWBB_SINCE}></label>
         <{$since_selection_box}>
     </div>
     <div class="form-group">
-        <label for="selectlength"><{$smarty.const._MD_SELECT_LENGTH}></label>
+        <label for="selectlength"><{$smarty.const._MD_NEWBB_SELECT_LENGTH}></label>
         <input class="form-control" type="text" name="selectlength" id="selectlength" value="<{$selectlength_select}>"/>
     </div>
     <div class="form-group">
-        <label for="selectlength"><{$smarty.const._MD_SHOWSEARCH}></label>
+        <label for="selectlength"><{$smarty.const._MD_NEWBB_SHOWSEARCH}></label>
         <{$show_search_radio}>
     </div>
 
@@ -51,5 +51,5 @@
         <p class="help-block"><{$search_rule}></p>
     </div>
 
-    <button type="submit" class="btn btn-default"><{$smarty.const._MD_SEARCH}></button>
+    <button type="submit" class="btn btn-default"><{$smarty.const._MD_NEWBB_SEARCH}></button>
 </form>

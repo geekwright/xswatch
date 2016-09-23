@@ -1,7 +1,7 @@
 <div class="newbb">
     <ul class="breadcrumb">
-        <li><a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/index.php"><{$smarty.const._MD_FORUMHOME}></a></li>
-        <li><a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/<{$moderate_url}>"><{$smarty.const._MD_SUSPEND_MANAGEMENT}></a></li>
+        <li><a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/index.php"><{$smarty.const._MD_NEWBB_FORUMHOME}></a></li>
+        <li><a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/<{$moderate_url}>"><{$smarty.const._MD_NEWBB_SUSPEND_MANAGEMENT}></a></li>
     </ul>
 </div>
 
@@ -11,7 +11,7 @@
     <br>
 <{/if}>
 
-<h3><{$smarty.const._MD_SUSPEND_LIST}></h3>
+<h3><{$smarty.const._MD_NEWBB_SUSPEND_LIST}></h3>
 <div class="table-responsive">
     <table class="table table-hover">
     <thead>

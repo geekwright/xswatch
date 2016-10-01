@@ -286,7 +286,7 @@
 
     <{if $currenttime}>
         <div class="row">
-            <div class="col-lg-12"><h3 class="nompl"><{$online.statistik}> <{$smarty.const._MD_STATS}></h3></div>
+            <div class="col-lg-12"><h3 class="nompl"><{$online.statistik}> <{$smarty.const._MD_NEWBB_STATS}></h3></div>
             <div class="col-sm-6 col-md-6">
                 <ul class="list-unstyled lw30">
                     <li><{$currenttime}></li>

@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-xs-2 col-md-2 xoops-comment-author aligncenter">
             <{if $comment.poster.id != 0}>
-                <img src="<{$xoops_upload_url}>/<{$comment.poster.avatar}>" class="img-responsive img-circle image-avatar" alt="">
+                <img src="<{$xoops_upload_url}>/<{$comment.poster.avatar}>" class="img-responsive img-rounded image-avatar" alt="">
                 <ul class="list-unstyled">
                     <li><strong class="poster-rank hidden-xs"><{$comment.poster.rank_title}></strong></li>
                     <li><img src="<{$xoops_upload_url}>/<{$comment.poster.rank_image}>" alt="<{$comment.poster.rank_title}>"

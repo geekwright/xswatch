@@ -9,9 +9,9 @@
     <{if $topic_post.poster.uid gt -1}>
         <{if $topic_post.poster.uid != 0}>
             <{if $topic_post.poster.avatar != "blank.gif"}>
-                    <img src="<{$xoops_upload_url}>/<{$topic_post.poster.avatar}>" alt="<{$topic_post.poster.name}>" class="img-circle img-responsive img-thumbnail">
+                    <img src="<{$xoops_upload_url}>/<{$topic_post.poster.avatar}>" alt="<{$topic_post.poster.name}>" class="img-rounded img-responsive img-thumbnail">
                 <{else}>
-                   <img src="<{$xoops_imageurl}>images/newbb-noavatar.png" alt="<{$topic_post.poster.name}>" class="img-circle img-responsive img-thumbnail">
+                   <img src="<{$xoops_imageurl}>images/newbb-noavatar.png" alt="<{$topic_post.poster.name}>" class="img-rounded img-responsive img-thumbnail">
             <{/if}>
 
             <{if $topic_post.poster.rank.title !=""}>

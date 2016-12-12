@@ -95,7 +95,9 @@
         <{/if}>
     </div><!-- .newbb-forum-title -->
 
-    <{$topic_post.post_text}>
+    <div class="newbb-forum-text">
+        <{$topic_post.post_text}>
+    </div>
 
     <{if $topic_post.post_attachment}>
     <div class="newbb-thread-attachment">

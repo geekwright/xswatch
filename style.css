@@ -1162,6 +1162,7 @@ ul.tdm-new-download-block li:last-child {
     color: #BBB;
     font-style: italic;
     padding: 5px;
+    margin-top: 10px;
 }
 
 .newbb-thread-attachment {

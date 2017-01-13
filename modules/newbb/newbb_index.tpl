@@ -90,11 +90,12 @@
         <{foreach item=category from=$categories}><!-- Forum categories -->
         <div class="panel panel-default mb10">
             <div class="panel-heading">
-                <h4 class="panel-title xoops-mewbb-forum-title">
+                <div class="panel-title xoops-mewbb-forum-title">
+                    <h4>
                     <{if $category.forums}>
                         <a data-toggle="collapse" data-parent="#accordion" href="#<{$category.cat_element_id}>"
                            title="<{$smarty.const.THEME_NEWBB_TOPIC}>">
-                            <span class="glyphicon glyphicon-plus-sign"></span>
+                            <span class="glyphicon glyphicon-list"></span>
                         </a>
                     <{/if}>
                     <{if $category.cat_image}>
@@ -104,46 +105,21 @@
                     <a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/index.php?cat=<{$category.cat_id}>" title="<{$category.cat_title}>">
                         <{$category.cat_title}>
                     </a>
-
-                    <{if $category.cat_sponsor}>
+                    </h4>
+                    <p class="text-muted"><{$category.cat_description}>
+                        <{if $category.cat_sponsor}>
                         <a href="<{$category.cat_sponsor.link}>" title="<{$smarty.const.THEME_FORUM_SPONSORBY}> <{$category.cat_sponsor.title}>"
                            target="_blank" class="pull-right btn btn-xs btn-success">
                             <{$category.cat_sponsor.title}>
                         </a>
-                    <{/if}>
+                        <{/if}>
+                    </p>
 
-                    <{if $category.cat_description}>
-                        <a href="#forum-desc-<{$category.cat_element_id}>" title="<{$smarty.const.THEME_FORUM_DESCRIPTION}>" data-toggle="modal"
-                           data-target="#forum-desc-<{$category.cat_element_id}>" class="btn btn-xs btn-info pull-right">
-                            <span class="glyphicon glyphicon-info-sign"></span>
-                        </a>
-                    <{/if}>
-                </h4>
-                <{if $category.cat_description}>
-                    <div class="modal fade" id="forum-desc-<{$category.cat_element_id}>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                         aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h4 class="modal-title" id="myModalLabel"><{$category.cat_title}></h4>
-                                </div>
-                                <div class="modal-body">
-                                    <p><{$category.cat_description}></p>
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/index.php?cat=<{$category.cat_id}>"
-                                       title="<{$smarty.const.THEME_GOTOTHEFORUM}>" class="btn btn-default">
-                                        <{$smarty.const.THEME_GOTOTHEFORUM}>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <{/if}>
+
+                </div>
             </div><!-- .panel-heading -->
 
-            <div id="<{$category.cat_element_id}>" class="panel-collapse collapse <{if $subforum_display == 'expand'}>in<{/if}>">
+            <div id="<{$category.cat_element_id}>" class="panel-collapse collapse.in <{if $subforum_display == 'expand'}>in<{/if}>">
                 <div class="panel-body">
                     <{if $category.forums}>
                         <div class="row hidden-xs">
@@ -180,38 +156,7 @@
                                     RSS
                                 </a>
                             <{/if}>
-                            <!-- Forum description -->
-                            <{if $forum.forum_desc != ""}>
-                                <button class="btn btn-primary btn-xs pull-right" data-toggle="modal" data-target="#forumDesc-<{$forum.forum_id}>"><span
-                                            class="glyphicon glyphicon-info-sign"></span></button>
-                                <div class="modal fade" id="forumDesc-<{$forum.forum_id}>" tabindex="-1" role="dialog" aria-labelledby="ForumDescription"
-                                     aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                <h4 class="modal-title" id="ForumDescription"><{$smarty.const.THEME_FORUM_DESC}>: <{$category.cat_title}>
-                                                    - <{$forum.forum_name}></h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                <{$forum.forum_desc}>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <{if $forum.forum_moderators}>
-                                                    <div class="pull-left"><span class="label label-info"><{$smarty.const._MD_MODERATOR}>: <{$forum.forum_moderators}></span>
-                                                    </div>
-                                                <{/if}>
-                                                <a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/index.php?cat=<{$category.cat_id}>"
-                                                   class="btn btn-default"
-                                                   title="<{$xoops_url}>/modules/<{$xoops_dirname}>/index.php?cat=<{$category.cat_id}>">
-                                                    <{$smarty.const.THEME_GOTOTHEFORUM}>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            <{/if}>
-                            <!-- End forum description-->
+                            <p class="text-muted"><{$forum.forum_desc}></p>
                         </div>
 
                         <div class="col-sm-1 col-md-1 text-center hidden-xs">

@@ -29,7 +29,7 @@ define('THEME_ABOUTUS', 'About Us');
 define('THEME_LEARNMORE', 'Learn More...');
 
 //NewBB
-define('THEME_NEWBB_TOPIC', 'More');
+define('THEME_NEWBB_TOPIC', 'Toggle');
 define('THEME_FORUM_SPONSORBY', 'Sponsor By.: ');
 define('THEME_GOTOTHEFORUM', 'Go to Forum');
 define('THEME_FORUM_DESCRIPTION', 'Description');

@@ -2,10 +2,10 @@
     <div class="row hidden-xs">
         <div class="col-xs-2 col-md-2 aligncenter"><{$comment.poster.uname}></div><!-- .col-md-3 -->
         <div class="col-xs-4 col-md-4">
-            <small class="label label-info"><strong><{$lang_posted}></strong> <{$comment.date_posted}></small>
+            <small class="text-muted"><strong><{$lang_posted}></strong> <{$comment.date_posted}></small>
         </div><!-- .col-md-3 -->
         <div class="col-xs-5 col-md-5">
-            <small class="label label-info"><strong><{$lang_updated}></strong> <{$comment.date_modified}></small>
+            <small class="text-muted"><strong><{$lang_updated}></strong> <{$comment.date_modified}></small>
         </div><!-- .col-md-3 -->
     </div><!-- row -->
 
@@ -32,7 +32,7 @@
         <div class="col-xs-10 col-md-10 xoops-comment-text">
             <h4><{$comment.image}><{$comment.title}></h4>
 
-            <p class="message-text text-muted"><{$comment.text}></p>
+            <p class="message-text"><{$comment.text}></p>
         </div><!-- .col-md-3 -->
     </div><!-- row -->
 

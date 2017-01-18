@@ -7,17 +7,18 @@
     <{include file="db:system_comment.tpl" comment=$comments[i]}>
     <!-- start comment replies -->
     <{foreach item=reply from=$comments[i].replies}>
+    <{assign var="indent" value="`$reply.prefix/25`"}>
+    <{assign var="fullcolwidth" value="12"}>
+
+    <{if $indent>3}>
+    <{assign var="indent" value="3"}>
+    <{/if}>
+    <{assign var="replyspace" value="`$fullcolwidth-$indent`"}>
+
     <div class="row">
-        <{assign var="indent" value="`$reply.prefix/25`"}>
-        <{assign var="bar" value="----------------"}>
-
-        <{if $indent>6}>
-            <{assign var="indent" value="6"}>
-        <{/if}>
-        <{assign var="reply-space" value="`12-$indent`"}>
-
-        <{$bar|truncate:"`$indent`":""|replace:"-":'<span class="glyphicon glyphicon-arrow-right"></span>'}>
+        <div class="col-md-offset-<{$indent}> col-md-<{$replyspace}> col-xs-offset-<{$indent}> col-xs-<{$replyspace}>">
         <{include file="db:system_comment.tpl" comment=$reply}>
+        </div>
     </div>
     <{/foreach}>
     <{/section}>

@@ -41,7 +41,7 @@
     <br>
 <{/if}>
 
-<form name="<{$form_post.name}>" id="<{$form_post.name}>" action="<{$form_post.action}>" method="<{$form_post.method}>" <{$form_post.extra}> >
+<form class="form-inline" name="<{$form_post.name}>" id="<{$form_post.name}>" action="<{$form_post.action}>" method="<{$form_post.method}>" <{$form_post.extra}> >
     <table width='100%' class='outer' cellspacing='1'>
         <{foreachq item=element from=$form_post.elements}>
         <{if $element.hidden != true}>

@@ -444,6 +444,7 @@ ul.userblock > li span.badge {
 
 .xoops-comment-text p.message-text {
     background: #EAEAEA;
+    color: #404040;
     padding: 10px;
     border-radius: 5px;
     -moz-border-radius: 5px;

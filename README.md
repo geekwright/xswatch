@@ -3,8 +3,8 @@ xSwatch
 
 xSwatch is a theme for [XOOPS 2.5](http://www.xoops.org) that is based on [Bootstrap](http://getbootstrap.com) 3.3.7.
 
-The main theme is based on [Bootswatch Cerulean](http://bootswatch.com/cerulean/), and a *dark* alternative is based on [Bootswatch Slate](http://bootswatch.com/slate/).
-Theme specific templates are compatible with and in many cases borrowed from [xBootstrap](https://github.com/angelorocha/xbootstrap).
+The main theme is based on [Bootswatch Cerulean](http://bootswatch.com/cerulean/), and a *dark* alternative is based on [Bootswatch Superhero](https://bootswatch.com/superhero/).
+Theme specific templates are generally compatible with and in many cases borrowed from [xBootstrap](https://github.com/angelorocha/xbootstrap).
 
 Features:
 - emphasis on better mobile experience

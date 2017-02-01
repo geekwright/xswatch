@@ -1303,3 +1303,8 @@ div.order-by a {
 .pub_article_t_top h2 a.titlelink { color: inherit; }
 
 #xo-logger-output {padding-bottom: 55px;}
+
+#xswatch-popup-body {
+    margin: 1em;
+    background: linear-gradient(135deg, #ffffff 0%,#eff6f9 88%,#cedde5 97%,#90c7e5 100%);
+}

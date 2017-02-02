@@ -1,4 +1,4 @@
-<table class="outer">
+<table style="background-color: inherit;">
 
     <{if $block.showgroups == true}>
 

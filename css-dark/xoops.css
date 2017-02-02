@@ -1211,5 +1211,15 @@ div.jGrowl div.jGrowl-closer {
 
 #xswatch-popup-body {
     margin: 1em;
-    background: linear-gradient(135deg, #ffffff 0%,#eff6f9 88%,#cedde5 97%,#90c7e5 100%);
+    background: linear-gradient(135deg, #191919 0%,#4c4c4c 93%,#919191 100%);
+}
+
+.xoops-theme-select form select {
+    background-color: black;
+}
+
+input[type=submit], input[type=reset], input[type=button], .xo-formbuttons, .formButton, button {
+    background-color: #3a3f44;
+    color: #eeeeee;
+    padding: 8px 12px;
 }

@@ -90,7 +90,7 @@
         <{foreach item=category from=$categories}><!-- Forum categories -->
         <div class="panel panel-default mb10">
             <div class="panel-heading">
-                <div class="panel-title xoops-mewbb-forum-title">
+                <div class="panel-title xoops-newbb-forum-title">
                     <h4>
                     <{if $category.forums}>
                         <a data-toggle="collapse" data-parent="#accordion" href="#<{$category.cat_element_id}>"

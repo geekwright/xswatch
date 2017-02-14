@@ -60,7 +60,7 @@
 
     <tr class="txtcenter alignmiddle">
         <th class="txtcenter"><input name='allbox' id='allbox' onclick='xoopsCheckAll("<{$pmform.name}>", "allbox");' type='checkbox' value='Check All' title="<{$smarty.const.THEME_SELECT_ALL}>"/></th>
-        <th class="txtcenter"><span class="glyphicon glyphicon-download-alt"></span></th>
+        <th><span class="glyphicon glyphicon-download-alt"></span></th>
         <{if $op == "out"}>
             <th><{$smarty.const._PM_TO}></th>
         <{else}>
@@ -80,11 +80,16 @@
             <td class='aligntop txtcenter'>
                 <input type='checkbox' id='msg_id_<{$message.msg_id}>' name='msg_id[]' value='<{$message.msg_id}>' />
             </td>
+            <td class='aligntop'>
             <{if $message.read_msg == 1}>
-                <td class='aligntop txtcenter'><img src='<{xoModuleIcons16 mail_read.png}>' alt='{translate key="READ"}' title='{translate key="READ"}'/></td>
+                <img src='<{xoModuleIcons16 mail_read.png}>' alt='{translate key="READ"}' title='{translate key="READ"}'/>
             <{else}>
-                <td class='aligntop txtcenter'><img src='<{xoModuleIcons16 mail_notread.png}>' alt='{translate key="NOT_READ"}' title='{translate key="NOT_READ"}'/></td>
+                <img src='<{xoModuleIcons16 mail_notread.png}>' alt='{translate key="NOT_READ"}' title='{translate key="NOT_READ"}'/>
             <{/if}>
+            <{if $message.msg_image|default:false}>
+                <img src='<{$xoops_url}>/images/subject/<{$message.msg_image}>' alt='' />
+            <{/if}>
+            </td>
             <td class='alignmiddle'>
                 <{if $message.postername != ""}>
                     <a href='<{$xoops_url}>/userinfo.php?uid=<{$message.posteruid}>' title=''><{$message.postername}></a>
